@@ -1,0 +1,67 @@
+---
+title: "KmeansUsage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{KmeansUsage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# K-Means Clustering Package
+
+This vignette demonstrates the functionality of the `Kmeans` package, including clustering, visualization, and performance benchmarking.
+
+## Installation
+
+To install the package from GitHub:
+
+```{r}
+devtools::install_github("Cameron-zgl/625_mypackage")
+```
+
+## Example Usage
+
+### Clustering with `my_kmeans`
+
+```{r}
+library(Kmeans)
+
+# Example data
+data <- matrix(rnorm(1000), ncol = 2)
+
+# Clustering
+result <- my_kmeans(data, centers = 3, nstart = 10)
+print(result)
+
+```
+
+Visualization of Clusters
+
+```{r}
+# Visualizing the clustering result
+plot_clusters(data, result$cluster, result$centers)
+
+```
+
+### Performance Benchmarking
+
+Here we compare the performance of `my_kmeans` and base R's `kmeans` function.
+
+```{r}
+# Benchmarking
+benchmark <- benchmark_kmeans(data, centers = 3, nstart = 10)
+print(benchmark)
+
+```
+
+The benchmark results show the following:
+
+-   **Base R `kmeans` function**: Typically faster but uses fixed methods.
+
+-   **`my_kmeans` function**: Includes enhancements like better modularity, and integration with this package's visualization.
+
+```{r}
+# Display the benchmark result
+benchmark
+
+```
