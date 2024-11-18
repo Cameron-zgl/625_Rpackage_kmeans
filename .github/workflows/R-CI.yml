@@ -17,10 +17,15 @@ jobs:
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
 
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcurl4-openssl-dev libssl-dev libxml2-dev
+
     - name: Install R dependencies
       run: |
-        Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages(c("devtools", "usethis", "pkgdown", "rcmdcheck", "rversions", "urlchecker"))'
-        Rscript -e 'devtools::install_deps(dependencies = TRUE)'
+        Rscript -e 'install.packages(c("devtools", "usethis", "pkgdown", "rcmdcheck", "rversions", "urlchecker", "remotes"), repos = "https://cloud.r-project.org")'
+        Rscript -e 'remotes::install_deps(dependencies = TRUE)'
 
     - name: Check R package
       run: R CMD check .
