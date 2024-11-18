@@ -45,3 +45,31 @@ plot_clusters(data, result$cluster, result$centers)
 benchmark <- benchmark_kmeans(data, centers = 3, nstart = 10)
 print(benchmark)
 ```
+## Example Testing
+
+After installation, you can test the package functionality using the examples provided above or your custom data. Below is a quick test:
+```R
+data <- matrix(rnorm(500), ncol = 2)
+result <- my_kmeans(data, centers = 2, nstart = 5)
+plot_clusters(data, result$cluster, result$centers)
+```
+
+## Contribution
+
+Contributions are welcome! If you find any issues or have suggestions for new features, feel free to open an issue or submit a pull request on GitHub.
+
+### Steps to Contribute:
+1. Fork the repository.
+2. Clone your fork locally.
+3. Create a new branch for your feature or bug fix.
+4. Commit your changes and push to your fork.
+5. Submit a pull request describing your changes.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Acknowledgments
+
+- This package was developed as part of the Biostat 625 coursework at the University of Michigan.
+- Special thanks to the instructors and teaching assistants for their guidance and support.
