@@ -1,11 +1,17 @@
-Package: mypackage
+Package: Kmeans
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Implementation of K-Means Clustering
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Guli Zhu [aut, cre]
+Maintainer: Guli Zhu <gulizhu@umich.edu>
+Description: This package provides an implementation of the K-Means clustering algorithm, along with tools for comparison and benchmarking against the base R kmeans function.
+License: MIT
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
