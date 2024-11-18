@@ -2,7 +2,7 @@
 % Please edit documentation in R/kmeans.R
 \name{my_kmeans}
 \alias{my_kmeans}
-\title{K-Means Clustering Implementation}
+\title{K-Means Clustering Implementation with C++ Distance Calculation}
 \usage{
 my_kmeans(data, centers, nstart = 10)
 }
@@ -17,9 +17,6 @@ my_kmeans(data, centers, nstart = 10)
 A list with cluster assignments, cluster centers, and within-cluster sum of squares.
 }
 \description{
-This function performs K-Means clustering on a dataset.
-}
-\examples{
-data <- matrix(rnorm(100), ncol = 2)
-result <- my_kmeans(data, centers = 3, nstart = 10)
+This function performs K-Means clustering on a dataset using a custom C++ function
+to calculate distances.
 }
