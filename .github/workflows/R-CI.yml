@@ -19,8 +19,8 @@ jobs:
 
     - name: Install R dependencies
       run: |
-        install.packages('devtools')
-        devtools::install_deps(dependencies = TRUE)
+        Rscript -e "install.packages('devtools', repos = 'https://cran.rstudio.com')"
+        Rscript -e "devtools::install_deps(dependencies = TRUE)"
 
     - name: Check R package
       run: R CMD check .
