@@ -1,79 +1,47 @@
+# Kmeans
 
-# KMeans Package Demo
-
-**mypackage** provides an implementation of the K-Means clustering algorithm.
+**Kmeans** is an R package providing an implementation of the K-Means clustering algorithm. The package includes additional features such as visualization of clustering results and performance benchmarking against the base R `kmeans` function.
 
 ## Installation
 
+To install the package from GitHub:
 ```R
-# Install directly from GitHub:
 devtools::install_github("Cameron-zgl/625_mypackage")
 ```
 
+## Features
+
+1. **Custom K-Means Implementation**: Provides a modular implementation of the K-Means clustering algorithm via the `my_kmeans` function.
+2. **Cluster Visualization**: Visualize clustering results in 2D space using `plot_clusters`.
+3. **Performance Benchmarking**: Compare the performance of `my_kmeans` with the base R `kmeans` function using `benchmark_kmeans`.
+4. **C++ Integration**: Leverages C++ for efficient computation of distances.
+
 ## Example Usage
 
-Here, we generate a dataset of random numbers and use the `my_kmeans` function from the `mypackage` package to perform clustering.
+### Clustering with `my_kmeans`
 
 ```R
-# Load the Kmeans package
 library(Kmeans)
 
-# Generate some random data
-set.seed(123)
-data <- matrix(rnorm(100), ncol = 2)
+# Generate example data
+data <- matrix(rnorm(1000), ncol = 2)
 
-# Perform clustering using my_kmeans
+# Perform clustering
 result <- my_kmeans(data, centers = 3, nstart = 10)
-
-# Print the clustering result
 print(result)
 ```
 
-## Visualizing the Results
-
-We can visualize the clustering results using a scatter plot.
+### Visualizing Clustering Results
 
 ```R
-# Assign colors to clusters
-colors <- c("red", "blue", "green")
-cluster_colors <- colors[result$cluster]
-
-# Plot the data
-plot(data, col = cluster_colors, pch = 19, main = "KMeans Clustering Results")
-points(result$centers, col = colors, pch = 4, cex = 2, lwd = 2) # Plot cluster centers
+# Visualize the clustering results
+plot_clusters(data, result$cluster, result$centers)
 ```
 
-## Comparing with Base R `kmeans`
-
-Let's compare the results of `my_kmeans` with the base R `kmeans` function.
+### Performance Benchmarking
 
 ```R
-# Perform clustering using the base R kmeans function
-base_result <- kmeans(data, centers = 3, nstart = 10)
-
-# Check if the cluster assignments are the same
-all_equal <- all.equal(result$cluster, base_result$cluster)
-cat("Are the cluster assignments the same?", all_equal, "\n")
-
-# Check the within-cluster sum of squares
-cat("my_kmeans within-cluster sum of squares:", result$withinss, "\n")
-cat("Base R kmeans within-cluster sum of squares:", base_result$tot.withinss, "\n")
-```
-
-## Benchmarking Performance
-
-We can use the `bench` package to compare the performance of `my_kmeans` and the base R `kmeans`.
-
-```R
-library(bench)
-
-# Benchmark the two functions
-benchmark <- bench::mark(
-  my_kmeans = my_kmeans(data, centers = 3, nstart = 10),
-  base_kmeans = kmeans(data, centers = 3, nstart = 10),
-  iterations = 100
-)
-
-# Print the benchmark results
+# Benchmark the performance of my_kmeans and base kmeans
+benchmark <- benchmark_kmeans(data, centers = 3, nstart = 10)
 print(benchmark)
 ```
