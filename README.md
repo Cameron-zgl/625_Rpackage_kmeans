@@ -53,6 +53,7 @@ data <- matrix(rnorm(500), ncol = 2)
 result <- my_kmeans(data, centers = 2, nstart = 5)
 plot_clusters(data, result$cluster, result$centers)
 ```
+For more detailed,you can find references in documents such as `vignettes`. DEMO test output is in the folder `doc`.
 
 ## Contribution
 
