@@ -6,7 +6,7 @@
 
 To install the package from GitHub:
 ```R
-devtools::install_github("Cameron-zgl/625_mypackage")
+devtools::install_github("Cameron-zgl/625_Rpackage_kmeans/")
 ```
 
 ## Features
