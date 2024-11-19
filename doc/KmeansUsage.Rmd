@@ -17,12 +17,10 @@ To install the package from GitHub:
 
 ```{r}
 if (!requireNamespace("Kmeans", quietly = TRUE)) {
-  devtools::install_github("Cameron-zgl/625_Rpackage_kmeans")
+  devtools::install_github("Cameron-zgl/625_Rpackage_kmeans", build_vignettes = FALSE)
+
 }
 library(Kmeans)
-
-
-
 ```
 
 ## Example Usage
