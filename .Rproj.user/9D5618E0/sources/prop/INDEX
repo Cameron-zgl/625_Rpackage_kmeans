@@ -14,6 +14,7 @@
 ~%2Fmypackage%2FR%2Fkmeans.R="002E6105"
 ~%2Fmypackage%2FR%2Fplot_clusters.R="CF93CD72"
 ~%2Fmypackage%2FREADME.md="7FDE3E81"
+~%2Fmypackage%2Fdoc%2FKmeansUsage.Rmd="628FC863"
 ~%2Fmypackage%2Fdoc%2FKmeansUsage.html="DCAB73FF"
 ~%2Fmypackage%2Fman%2Fmy_kmeans.Rd="4DF2E77B"
 ~%2Fmypackage%2Fsrc%2FRcppExports.cpp="4E71BC84"
