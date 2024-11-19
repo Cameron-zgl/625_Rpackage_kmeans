@@ -16,7 +16,9 @@ This vignette demonstrates the functionality of the `Kmeans` package, including 
 To install the package from GitHub:
 
 ```{r}
-devtools::install_github("Cameron-zgl/625_Rpackage_kmeans")
+devtools::install_github("Cameron-zgl/625_Rpackage_kmeans", force = TRUE, build_opts = c("--no-manual", "--no-resave-data"))
+
+
 ```
 
 ## Example Usage
