@@ -24,9 +24,14 @@ jobs:
 
     - name: Install R dependencies
       run: |
-        Rscript -e 'install.packages(c("devtools", "usethis", "pkgdown", "rcmdcheck", "rversions", "urlchecker", "remotes","bench"), repos = "https://cloud.r-project.org")'
-        Rscript -e 'remotes::install_deps(dependencies = TRUE)'
+        Rscript -e 'install.packages(c("devtools", "usethis", "pkgdown", "rcmdcheck", "rversions", "urlchecker", "remotes", "bench"), repos = "https://cloud.r-project.org")'
+        Rscript -e 'devtools::install_deps(dependencies = TRUE)'
+
+    - name: Pre-load devtools
+      run: Rscript -e 'library(devtools)'
+
     - name: Build vignettes
-      run: R -e "devtools::build_vignettes()"
+      run: Rscript -e "devtools::build_vignettes()"
+
     - name: Check R package
       run: R CMD check --no-manual .
