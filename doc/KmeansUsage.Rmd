@@ -1,6 +1,6 @@
 ---
 title: "KmeansUsage"
-output: rmarkdown::html_vignette
+output: rmarkdown::html_document
 vignette: >
   %\VignetteIndexEntry{KmeansUsage}
   %\VignetteEngine{knitr::rmarkdown}
@@ -16,7 +16,11 @@ This vignette demonstrates the functionality of the `Kmeans` package, including 
 To install the package from GitHub:
 
 ```{r}
-devtools::install_github("Cameron-zgl/625_Rpackage_kmeans", force = TRUE, build_opts = c("--no-manual", "--no-resave-data"))
+if (!requireNamespace("Kmeans", quietly = TRUE)) {
+  devtools::install_github("Cameron-zgl/625_Rpackage_kmeans")
+}
+library(Kmeans)
+
 
 
 ```
