@@ -45,8 +45,6 @@ jobs:
     - name: Pre-load devtools
       run: Rscript -e 'library(devtools)'
 
-    - name: Build vignettes
-      run: Rscript -e "devtools::build_vignettes()"
 
     - name: Check R package
       run: R CMD check --no-manual .
