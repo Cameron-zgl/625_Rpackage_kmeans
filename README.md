@@ -2,6 +2,16 @@
 
 **Kmeans** is an R package providing an implementation of the K-Means clustering algorithm. The package includes additional features such as visualization of clustering results and performance benchmarking against the base R `kmeans` function.
 
+## Continuous Integration (CI)
+
+This project uses GitHub Actions for Continuous Integration to ensure package quality and reproducibility. The CI pipeline includes:
+- Installing package dependencies
+- Building and testing vignettes
+- Running `R CMD check` to verify package integrity
+
+### Status
+[![R-CI](https://github.com/Cameron-zgl/625_Rpackage_kmeans/actions/workflows/R-CI.yml/badge.svg)](https://github.com/Cameron-zgl/625_Rpackage_kmeans/actions/workflows/R-CI.yml)
+
 ## Installation
 
 To install the package from GitHub:
