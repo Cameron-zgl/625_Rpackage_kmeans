@@ -28,4 +28,4 @@ jobs:
         Rscript -e 'remotes::install_deps(dependencies = TRUE)'
 
     - name: Check R package
-      run: R CMD check .
+      run: R CMD check --no-manual .
